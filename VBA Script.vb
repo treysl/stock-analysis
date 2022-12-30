@@ -66,26 +66,6 @@ Sub main()
     Range("Q2").Value = FormatPercent(max_per)
     Range("Q3").Value = FormatPercent(min_per)
     Range("Q4").Value = max_vol
-    
-    
-    'loops through columns 11 & 12. If either column contains min or max values, apply corresponding ticker to corresponding cell
-    For i = first_row To last_row
-        If max_per = Cells(i, 11).Value Then
-            Range("P2").Value = Cells(i, 9).Value
-        ElseIf min_per = Cells(i, 11).Value Then
-            Range("P3").Value = Cells(i, 9).Value
-        ElseIf max_vol = Cells(i, 12).Value Then
-            Range("P4").Value = Cells(i, 9).Value
-        End If
-    Next i
-    
-    'loops through column 10 then applies either green or red interior
-    For i = first_row To last_row
-        If IsEmpty(Cells(i, 10).Value) Then Exit For
-        If Cells(i, 10).Value > 0 Then
-            Cells(i, 10).Interior.ColorIndex = 4
-        Else
-            Cells(i, 10).Interior.ColorIndex = 3
         End If
     Next i
                 
